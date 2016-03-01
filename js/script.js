@@ -16,7 +16,7 @@ $('#takePhoto').on('click', function() {
 // Resize
 function resize(image) {
 
-	var imageDataInBase64 = 
+	var imageDataInBase64 = image;
 
 	window.imageResizer.resizeImage(
 	function(data) { 
@@ -43,6 +43,8 @@ function onPhotoDataSuccess(imageData) {
 	var photo = document.getElementById('photo');
 	photo.style.display = 'block';
 	photo.src = "data:image/jpeg;base64," + imageData;
+
+	resize(imageData);
 
 	// var sendPhoto = document.getElementById('sendPhoto');
 	// sendPhoto.style.display = 'block';
