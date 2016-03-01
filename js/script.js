@@ -40,7 +40,9 @@ function resize(image) {
 
 function takePhoto(){
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { 
-		quality: 10, 
+		quality: 50, 
+		targetWidth: 400,
+		targetHeight: 400,
 		allowEdit: false, 
 		destinationType: navigator.camera.DestinationType.DATA_URL 
 	});
@@ -48,10 +50,13 @@ function takePhoto(){
 
 function pickPhoto(){
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { 
-		quality: 10, 
+		quality: 50, 
+		targetWidth: 400,
+		targetHeight: 400,
 		allowEdit: false, 
 		destinationType: navigator.camera.DestinationType.DATA_URL,
-		sourceType : navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
+		sourceType : navigator.camera.PictureSourceType.PHOTOLIBRARY,
+		mediaType: navigator.camera.MediaType.PICTURE
 	});
 }
 
