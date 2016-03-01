@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "co.codingcarlos.crapme"
-        version   = "0.0.7">
+        version   = "0.0.8">
 
     <name>CrapMe</name>
 
@@ -75,7 +75,7 @@
     -->
 
     <!-- Image resizer -->
-    <plugin name="com.synconset.imageresizer" spec="0.1.1" source="pgb" />
+    <!-- <plugin name="com.synconset.imageresizer" spec="0.1.1" source="pgb" /> -->
 
     <!-- Define app icon for each platform. -->
     <icon src="img/icon.png" />
