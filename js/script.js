@@ -27,7 +27,7 @@ function resize(image) {
 
 	window.imageResizer.resizeImage(
 	function(data) { 
-		var image = document.getElementById('myImage');
+		var image = document.getElementById('photo');
 		image.src = "data:image/jpeg;base64," + data.imageData; 
 	}, function (error) {
 		console.log("Error : \r\n" + error);
