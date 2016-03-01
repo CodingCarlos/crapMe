@@ -22,7 +22,7 @@ $('#pickPhoto').on('click', function() {
 
 function takePhoto(){
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { 
-		quality: 45, 
+		quality: 100, 
 		targetWidth: 600,
 		targetHeight: 600,
 		allowEdit: false, 
@@ -32,9 +32,9 @@ function takePhoto(){
 
 function pickPhoto(){
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { 
-		quality: 75, 
-		targetWidth: 400,
-		targetHeight: 400,
+		quality: 100, 
+		targetWidth: 600,
+		targetHeight: 600,
 		allowEdit: false, 
 		destinationType: navigator.camera.DestinationType.DATA_URL,
 		sourceType : navigator.camera.PictureSourceType.PHOTOLIBRARY,
