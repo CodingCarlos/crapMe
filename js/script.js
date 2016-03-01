@@ -23,25 +23,26 @@ $('#pickPhoto').on('click', function() {
 // Resize
 function resize(image) {
 
-	var imageDataInBase64 = image;
+	// var imageDataInBase64 = image;
 
-	window.imageResizer.resizeImage(
-	function(data) { 
+	// window.imageResizer.resizeImage(
+	// function(data) { 
 		var image = document.getElementById('photo');
-		image.src = "data:image/jpeg;base64," + data.imageData; 
-	}, function (error) {
-		console.log("Error : \r\n" + error);
-	}, imageDataInBase64, 400, 0, {
-		// resizeType: ImageResizer.RESIZE_TYPE_FACTOR,
-		format: 'jpg'
-	});
+		// image.src = "data:image/jpeg;base64," + data.imageData; 
+		image.src = "data:image/jpeg;base64," + image; 
+	// }, function (error) {
+	// 	console.log("Error : \r\n" + error);
+	// }, imageDataInBase64, 400, 0, {
+	// 	// resizeType: ImageResizer.RESIZE_TYPE_FACTOR,
+	// 	format: 'jpg'
+	// });
 }
 
 
 function takePhoto(){
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { 
 		quality: 10, 
-		allowEdit: true, 
+		allowEdit: false, 
 		destinationType: navigator.camera.DestinationType.DATA_URL 
 	});
 }
@@ -49,7 +50,7 @@ function takePhoto(){
 function pickPhoto(){
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { 
 		quality: 10, 
-		allowEdit: true, 
+		allowEdit: false, 
 		destinationType: navigator.camera.DestinationType.DATA_URL,
 		sourceType : navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
 	});
