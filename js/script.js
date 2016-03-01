@@ -60,7 +60,7 @@ function onPhotoDataSuccess(imageData) {
 	photo.style.display = 'block';
 	photo.src = "data:image/jpeg;base64," + imageData;
 
-	resize(imageData);
+	resize(photo.src);
 
 	// var sendPhoto = document.getElementById('sendPhoto');
 	// sendPhoto.style.display = 'block';
