@@ -5,11 +5,18 @@ var element;
 
 /* Controls */
  
-// Start
+// Take photo from camera
 $('#takePhoto').on('click', function() {
 	// TAKE PHOTO
 	takePhoto();
 });
+
+// Pick photo from gallery
+$('#pickPhoto').on('click', function() {
+	// TAKE PHOTO
+	pickPhoto();
+});
+
 
 /* Functions */
 
@@ -24,8 +31,8 @@ function resize(image) {
 		image.src = "data:image/jpeg;base64," + data.imageData; 
 	}, function (error) {
 		console.log("Error : \r\n" + error);
-	}, imageDataInBase64, 400, 400, {
-		resizeType: ImageResizer.RESIZE_TYPE_FACTOR,
+	}, imageDataInBase64, 400, 0, {
+		// resizeType: ImageResizer.RESIZE_TYPE_FACTOR,
 		format: 'jpg'
 	});
 }
@@ -33,9 +40,18 @@ function resize(image) {
 
 function takePhoto(){
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { 
-		quality: 20, 
+		quality: 10, 
 		allowEdit: true, 
 		destinationType: navigator.camera.DestinationType.DATA_URL 
+	});
+}
+
+function pickPhoto(){
+	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { 
+		quality: 10, 
+		allowEdit: true, 
+		destinationType: navigator.camera.DestinationType.DATA_URL,
+		sourceType : navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
 	});
 }
 
