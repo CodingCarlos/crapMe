@@ -23,19 +23,18 @@ $('#pickPhoto').on('click', function() {
 // Resize
 function resize(image) {
 
-	// var imageDataInBase64 = image;
+	var imageDataInBase64 = image;
 
-	// window.imageResizer.resizeImage(
-	// function(data) { 
+	window.imageResizer.resizeImage(
+	function(data) { 
 		var image = document.getElementById('photo');
-		// image.src = "data:image/jpeg;base64," + data.imageData; 
-		image.src = "data:image/jpeg;base64," + image; 
-	// }, function (error) {
-	// 	console.log("Error : \r\n" + error);
-	// }, imageDataInBase64, 400, 0, {
-	// 	// resizeType: ImageResizer.RESIZE_TYPE_FACTOR,
-	// 	format: 'jpg'
-	// });
+		image.src = "data:image/jpeg;base64," + data.imageData; 
+	}, function (error) {
+		console.log("Error : \r\n" + error);
+	}, imageDataInBase64, 400, 0, {
+		// resizeType: ImageResizer.RESIZE_TYPE_FACTOR,
+		format: 'jpg'
+	});
 }
 
 
@@ -58,10 +57,10 @@ function pickPhoto(){
 
 function onPhotoDataSuccess(imageData) {
 	var photo = document.getElementById('photo');
-	photo.style.display = 'block';
+	// photo.style.display = 'block';
 	photo.src = "data:image/jpeg;base64," + imageData;
 
-	resize(photo.src);
+	// resize(photo.src);
 
 	// var sendPhoto = document.getElementById('sendPhoto');
 	// sendPhoto.style.display = 'block';
