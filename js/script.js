@@ -24,7 +24,7 @@ function resize(image) {
 		image.src = "data:image/jpeg;base64," + data.imageData; 
 	}, function (error) {
 		console.log("Error : \r\n" + error);
-	}, imageDataInBase64, 0.5, 0.5, {
+	}, imageDataInBase64, 400, 400, {
 		resizeType: ImageResizer.RESIZE_TYPE_FACTOR,
 		format: 'jpg'
 	});
